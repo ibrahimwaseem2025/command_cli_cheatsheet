@@ -1,0 +1,66 @@
+% dnf, system, packages
+
+# Install a package
+sudo dnf install <available_package>
+
+
+# Remove package and clean up unused dependencies
+sudo dnf autoremove <installed_package>
+
+
+# Remove package and immediately clean cached metadata & packages
+sudo dnf remove <installed_package> && sudo dnf clean all
+
+
+# Complete package purge: autoremove dependencies and clean cached data
+sudo dnf autoremove <installed_package> && sudo dnf clean all
+
+# Remove an installed package
+sudo dnf remove <installed_package>
+
+# Search available packages
+dnf search <keyword>
+
+# Reinstall a package
+sudo dnf reinstall <installed_package>
+
+# View detailed package information
+dnf info <package>
+
+# Upgrade all system packages
+sudo dnf upgrade --refresh
+
+# Downgrade a package
+sudo dnf downgrade <installed_package>
+
+# Clean cached metadata and packages
+sudo dnf clean all
+
+# List transaction history
+dnf history
+
+# Undo a specific transaction
+sudo dnf history undo <transaction_id>
+
+# Enable a COPR repository
+sudo dnf copr enable <copr_repo>
+
+# List installed packages from a specific repository
+dnf list installed --repo=<repository>
+
+# Find which package provides a specific command or file
+dnf provides <file_path>
+
+$ available_package: dnf list available | awk '{print $1}' --- --preview "dnf info {}"
+$ installed_package: dnf list installed | awk '{print $1}' --- --preview "dnf info {}"
+$ package: dnf list installed | awk '{print $1}'
+$ transaction_id: dnf history | awk 'NR>2 {print $1, $3, $4}' --- --column 1 --delimiter ' '
+$ repository: dnf repolist | awk 'NR>1 {print $1}'
+
+
+
+# 
+
+
+# find specific installed packages dnf
+dnf list --installed | grep <package_name>

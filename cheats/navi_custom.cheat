@@ -1,0 +1,13 @@
+% navi, custom, system
+
+# Add a new cheatsheet entry interactively
+FILE="$HOME/.local/share/navi/cheats/custom/<file_name>.cheat"; mkdir -p "$(dirname "$FILE")" && nano "$FILE"
+
+$ file_name: find ~/.local/share/navi/cheats/custom -type f -name "*.cheat" -exec basename {} .cheat \; 2>/dev/null --- --fzf-overrides "--print-query"
+
+
+
+
+# Instant add: Append command to cheat file without opening editor
+quickcheat
+

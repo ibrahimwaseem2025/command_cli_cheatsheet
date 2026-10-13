@@ -1,0 +1,40 @@
+% fastfetch, system-info
+
+# Run and display standard fastfetch 
+fastfetch
+
+# Interactive Live Watch / Monitor System display
+fastfetch --watch <interval_seconds>
+
+# Run with a custom config file or preset
+fastfetch --config <preset_or_path>
+
+# Run without the ASCII / Image logo 
+fastfetch --logo none
+
+# Print system info with a custom logo file (ASCII or Image)
+fastfetch --logo <logo_path>
+
+# Generate a new fastfetch configuration file interactively
+fastfetch --gen-config
+
+# List available modules, presets, or logos
+fastfetch --list-<list_type>
+
+# Output system information in JSON format
+fastfetch --json
+
+# Run with custom key, title, and logo colors
+fastfetch --color <color_code>
+
+# Disable color output display(useful for piping to files)
+fastfetch --pipe
+
+# Display additional list of fastfetch
+fastfetch --help
+
+
+$ interval_seconds: echo "1\n2\n5\n10"
+$ list_type: echo "modules\npresets\nlogos\nfeatures\nconfig-paths"
+$ preset_or_path: echo "archey\nneofetch\npaleofetch\nvacuum\nci"
+$ color_code: echo "black\nred\ngreen\nyellow\nblue\nmagenta\ncyan\nwhite"
